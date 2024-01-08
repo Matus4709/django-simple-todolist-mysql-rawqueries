@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container login table-responsive">
+    <h1>Task List</h1>
+    <ul>
+        {% for task in tasks %}
+        <table class="table">
+            <thead>
+              <tr>
+                <td style="min-width: 200px;" >{{task.1}}</td>
+                <td >{{task.3}}</td>
+                <td >
+                {% if task.2 == 0 %}
+                    <form action="{% url 'todolist:task_completed' task.0 %}" method="post">
+                        {% csrf_token %}
+                        <span>
+                        <button class="btn btn-simple border border-success p-2" style="color: green; margin-left:2rem" type="submit">Complete</button>
+                        </span>
+                    </form>
+                {% else %}
+                <form action="">
+                    <span>
+                    <button class="btn btn-simple border border-secondary p-2" style="color: gray; margin-left:2rem" type="">Completed</button></span>
+                </form>
+                {% endif %}
+            </td>
+                <td ><form action="{% url 'todolist:delete_task' task.0 %}" method="post">
+                    {% csrf_token %}
+                    <span>
+                    <button class="btn btn-simple border border-danger p-2" style="color: red; margin-left:2rem " type="submit">Delete</button></span>
+                </form></td>
+                <td ><form action="{% url 'todolist:edit_task' task.0 %}" method="post">
+                    {% csrf_token %}
+                    <span>
+                    <button class="btn btn-simple border border-warning p-2" style="color: yellow; margin-left:2rem " type="submit">Edit</button></span>
+                </form></td>
+              </tr>
+            </thead>
+            </table>
+
+
+        <br>
+        {% endfor %}
+    </ul>
+  </div>
+{% endblock content %}
+

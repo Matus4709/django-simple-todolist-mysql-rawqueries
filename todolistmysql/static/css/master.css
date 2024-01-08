@@ -1,0 +1,16 @@
+body {
+    background-color: #282828;
+    color: white;
+}
+*{
+    color: white;
+}
+.login {
+    color: black;
+}
+#id_username, #id_title, #id_password, #id_email, #id_password1, #id_password2 {
+    color: black;
+}
+.black-color{
+    color: black;
+}
