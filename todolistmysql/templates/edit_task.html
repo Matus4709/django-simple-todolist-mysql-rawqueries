@@ -2,10 +2,22 @@
 
 {% block content %}
 <div class="container login">
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}  <!-- Renders all form fields as <p> tags -->
-            <button class="btn btn-simple border border-success p-2" style="color: green; margin-left:2rem" type="submit">Save</button>
-    </form>
+
+  <div class="center-container d-flex  bd-highlight mb-3 justify-content-center">
+    <div class="d-flex justify-content-center flex-column text-center">
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-group mt-4">
+            <h1>Editing:</h1>
+            <div style="width: 300px; text-align:center; background:none; color:white">
+              {{form.title  }}
+            </div>
+          </div>
+          <button class="btn btn-simple text-light border mt-4" type="submit">Save</button>
+          
+      </form>
   </div>
+</div>
+</div>
+   
 {% endblock content %}

@@ -14,3 +14,17 @@ body {
 .black-color{
     color: black;
 }
+.btn-on-hover:hover{
+    background-color: black;
+    color: white;
+
+}
+.btn-simple:hover, .btn-simple:focus, .btn-simple:active, .btn-simple.active, .open>.dropdown-toggle.btn-simple {
+    color: #ffffff;
+    background-color: #495057;
+    border-color: #343a40; /*set the color you want here*/
+}
+.center-container {
+    display: flex;
+    justify-content: center;
+  }

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'todolist',
     'crispy_forms',
     'bootstrap4',
+    'pytz',
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -113,6 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Europe/Warsaw'
+
 USE_I18N = True
 
 USE_TZ = True

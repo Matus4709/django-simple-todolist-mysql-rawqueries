@@ -1,5 +1,55 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>INDEX PAGE</h1>
+  
+
+
+  {% if user.is_authenticated %}
+  
+
+  {% else %}
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header ">
+        <h5 class="modal-title " style="color: black; text-align:center;" id="exampleModalLabel">TODO - Welcome</h5>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+      </div>
+      <div class="modal-body">
+        <div class="container center">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-auto">
+                <li class="m-2 "><a href="{% url 'todolist:login' %}" class="btn btn-simple border btn-on-hover">Log in</a></li>
+              </div>
+              <div class="col-auto">
+                <li class="m-2 " ><a  href="{% url 'todolist:signup' %}" class="btn btn-simple border btn-on-hover">Sign up</a></li>
+              </div>
+            </div>
+          </div>
+          
+          
+        </div>
+      <!-- </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<script>
+  // Wait for the page to load
+  document.addEventListener("DOMContentLoaded", function() {
+    // Get the modal element by its ID
+    var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+    // Show the modal
+    myModal.show();
+  });
+</script>
+  
+  {% endif %}
+
 {% endblock content %}
